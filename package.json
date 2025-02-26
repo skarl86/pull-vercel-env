@@ -8,6 +8,15 @@
   "scripts": {
     "start": "node pull-vercel-env.js"
   },
+  "keywords": [
+    "vercel",
+    "cli",
+    "environment",
+    "variables",
+    "pull",
+    "vercel env",
+    "vercel env pull"
+  ],
   "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
