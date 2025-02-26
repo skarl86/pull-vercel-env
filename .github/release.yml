@@ -1,0 +1,31 @@
+name: Release # Workflow 이름
+
+on:
+  push:
+    branches:
+      - main # main 브랜치에 push될 때 실행
+
+jobs:
+  release:
+    runs-on: ubuntu-latest # 실행 환경 설정
+
+    steps:
+      - name: Checkout repository # 저장소 체크아웃
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 모든 Git 기록 가져오기
+
+      - name: Setup Node.js # Node.js 설정
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: "https://registry.npmjs.org/"
+
+      - name: Install dependencies # 의존성 설치
+        run: npm install
+
+      - name: Run semantic-release # semantic-release 실행
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release

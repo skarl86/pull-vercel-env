@@ -1,0 +1,20 @@
+{
+  "name": "pull-vercel-env",
+  "version": "1.0.0",
+  "description": "CLI tool to pull environment variables from Vercel",
+  "bin": {
+    "pull-vercel-env": "./pull-vercel-env.js"
+  },
+  "scripts": {
+    "start": "node pull-vercel-env.js"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^11.0.1",
+    "@semantic-release/npm": "^12.0.1",
+    "semantic-release": "^24.2.3"
+  }
+}
