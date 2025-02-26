@@ -1,6 +1,10 @@
 {
   "name": "pull-vercel-env",
   "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/namgee/pull-vercel-env.git"
+  },
   "description": "CLI tool to pull environment variables from Vercel",
   "bin": {
     "pull-vercel-env": "./pull-vercel-env.js"
