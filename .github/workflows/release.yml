@@ -9,6 +9,11 @@ jobs:
   release:
     runs-on: ubuntu-latest # 실행 환경 설정
 
+    permissions:
+      contents: write # push를 위한 권한
+      issues: write # semantic-release가 Issue를 생성할 수 있도록
+      pull-requests: write # PR 관련 권한 (필요한 경우)
+
     steps:
       - name: Checkout repository # 저장소 체크아웃
         uses: actions/checkout@v4
