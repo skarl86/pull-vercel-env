@@ -1,36 +1,20 @@
-name: Release # Workflow 이름
+name: Release
 
 on:
   push:
     branches:
-      - main # main 브랜치에 push될 때 실행
+      - main
 
 jobs:
   release:
-    runs-on: ubuntu-latest # 실행 환경 설정
-
-    permissions:
-      contents: write # push를 위한 권한
-      issues: write # semantic-release가 Issue를 생성할 수 있도록
-      pull-requests: write # PR 관련 권한 (필요한 경우)
-
+    runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository # 저장소 체크아웃
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
         with:
-          fetch-depth: 0 # 모든 Git 기록 가져오기
-
-      - name: Setup Node.js # Node.js 설정
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.9.0
-          registry-url: "https://registry.npmjs.org/"
-
-      - name: Install dependencies # 의존성 설치
-        run: npm install
-
-      - name: Run semantic-release # semantic-release 실행
+          node-version: "20"
+      - run: npm ci
+      - run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npx semantic-release
