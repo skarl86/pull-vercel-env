@@ -18,7 +18,7 @@ jobs:
       - name: Setup Node.js # Node.js 설정
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20.9.0
           registry-url: "https://registry.npmjs.org/"
 
       - name: Install dependencies # 의존성 설치
