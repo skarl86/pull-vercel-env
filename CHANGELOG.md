@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/skarl86/pull-vercel-env/compare/v1.0.0...v1.1.0) (2025-03-21)
+
+
+### Features
+
+* Enhance Vercel environment variable CLI tool ([4eb3356](https://github.com/skarl86/pull-vercel-env/commit/4eb3356393551bfb1a492ec61b88e9c4e0bb6e51))
+
 # 1.0.0 (2025-02-26)
 
 
